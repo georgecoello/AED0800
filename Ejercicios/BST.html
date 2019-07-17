@@ -1,0 +1,13 @@
+<script src = "BTS.js?1"></script>
+<script>
+    n = 3; 
+    console.log("El factorial de ",n," es: ",factorialRecursivo(n)); 
+
+    function factorialRecursivo(n){
+        if (n<2){
+            return 1;
+        }
+        return n*factorialRecursivo(n-1);
+    }
+
+   </script>

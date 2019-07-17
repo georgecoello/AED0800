@@ -1,0 +1,65 @@
+<script>
+    function Node (value){
+        this.value = value; 
+        this.next = null; 
+    }
+
+    function LinkedList(){
+        this.first = null; 
+        this.add = LinkedListAdd; 
+        this.count = LinkedListCount;
+    }
+    function LinkedListAdd(value){
+        if (!this.first){
+            this.first = new Node(value);
+        } else {
+            current = this.first; 
+            while (current.next){
+                current = current .next; 
+            }
+            current.next = new Node (value); 
+        }
+    }
+
+    function LinkedListCount (){
+        if (!this.first){
+            count = 0; 
+            return count; 
+        }else {
+            current = this.first; 
+            count = 1; 
+            while (current.next){
+                count ++; 
+                current = current.next; 
+            }
+            return count; 
+        }
+    }
+
+    function Laptop (marca, procesador){
+        this.marca = marca; 
+        this.procesador = procesador; 
+    }
+
+    function Cuaderno (marca, paginas){
+        this.marca = marca; 
+        this.paginas = paginas; 
+    }
+
+    function Lapiz (marca, grosor){
+        this.marca = marca; 
+        this.grosor = grosor; 
+    }
+
+    mochila = new LinkedList(); 
+
+    console.group("Elementos de la mochila ");
+    mochila.add(new Laptop("Dell", "32 Bits")); 
+    mochila.add(new Laptop("Hp", "64 Bits"));
+    mochila.add(new Cuaderno("Copán", 100));
+    mochila.add(new Lapiz("Bic",0.7)); 
+    console.log(mochila);
+    console.groupEnd();
+    rt = mochila.count(); 
+    console.log("En la mochila hay : ", rt, "elementos. "); 
+</script>
